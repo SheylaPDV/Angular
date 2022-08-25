@@ -315,7 +315,11 @@
 </div>
 
 <div class="content" role="main">
-  <h1>¡Hola, {{ nombre }}!</h1>
+  <!-- <h1>¡Hola, {{ nombre }}!</h1> -->
+  <!-- Cuando ponemos corchetes, indicamos que el valor de las comillas es una variable  que pòdemos encontrrar dentro del controlador-->
+  <!-- Input para trabajaer con NgModel -->
+  <input type="text" placeholder="Nombre del usuario" [(ngModel)]="nombre" />
+  <app-saludo [nombre]="nombre"></app-saludo>
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
