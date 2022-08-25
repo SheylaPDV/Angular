@@ -1,5 +1,7 @@
 // Controlador
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+// (input) eventos de componentes padre a componentes hijo
+// (output) eventos de componentes hijo a componentes padre
 
 @Component({
   selector: 'app-saludo',
