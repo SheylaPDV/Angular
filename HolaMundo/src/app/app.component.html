@@ -324,6 +324,7 @@
     [nombre]="usuario"
     (mensajeEmitter)="recibirMensajeDelHijo($event)"
   ></app-saludo>
+  <app-saludo (mensajeEmitter)="recibirMensajeDelHijo($event)"></app-saludo>
   <!-- <app-saludo></app-saludo> -->
 </div>
 
