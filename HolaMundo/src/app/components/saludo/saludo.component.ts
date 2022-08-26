@@ -1,5 +1,5 @@
 // Controlador
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 // (input) eventos de componentes padre a componentes hijo
 // (output) eventos de componentes hijo a componentes padre
 
@@ -10,6 +10,7 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 })
 export class SaludoComponent implements OnInit {
   @Input() nombre: string = 'Shey';
+  @Output() mensajeEmitter: EventEmitter<string> = new EventEmitter<string>();
   // nombre: string = 'Sheyla';
 
   constructor() {}
@@ -19,9 +20,12 @@ export class SaludoComponent implements OnInit {
     console.log('ngOnInit del componente Saludo');
   }
 
-  // Ejemplo para gestionar un evento de tipo click en el DOM
+  // Ejemplo para gestionar un evento de tipo click en el DOM y enviar un texto al componente padre
 
-  alertaSaludo(): void {
-    alert(`Hola, ${this.nombre}. Alerta despachada desde un click de boton`);
+  enviarMensajeAlPadre(): void {
+    // alert(`Hola, ${this.nombre}. Alerta despachada desde un click de boton`);
+    this.mensajeEmitter.emit(
+      `Hola, ${this.nombre}. Alerta despachada desde un click de boton`
+    );
   }
 }
