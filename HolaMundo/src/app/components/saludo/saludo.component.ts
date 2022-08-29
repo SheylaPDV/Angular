@@ -20,6 +20,13 @@ import {
 export class SaludoComponent implements OnInit, OnDestroy, OnChanges {
   @Input() nombre: string = 'Shey';
   @Output() mensajeEmitter: EventEmitter<string> = new EventEmitter<string>();
+
+  myStyle: object = {
+    color: 'yellow',
+    fontSize: '30px',
+    fontWeight: 'bold',
+    background: 'black',
+  };
   // nombre: string = 'Sheyla';
 
   constructor() {}

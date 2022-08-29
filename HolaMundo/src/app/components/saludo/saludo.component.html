@@ -9,7 +9,9 @@
   <!-- No indicamos nada en las etiquetas, sino que el valor viene definido por la propiedad -->
 </h3>
 
-<h5>Hola que tal</h5>
+<h5 [ngStyle]="{ color: 'blue' }">Hola que tal</h5>
+
+<h5 [ngStyle]="myStyle">Hola que tal, personalizado desde variable</h5>
 
 <button id="emit-alerta" (click)="enviarMensajeAlPadre()">
   Enviar mensaje de saludo al componente padre
