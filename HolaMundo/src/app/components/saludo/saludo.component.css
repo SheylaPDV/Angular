@@ -1,11 +1,24 @@
 h1 {
-  color: tomato;
+  color: rgb(103, 30, 155);
 }
 
 .saludo {
-  color: blue;
+  color: rgb(159, 66, 188);
 }
 
 .anonimo {
+  color: green;
+}
+button {
+  background-color: rgb(28, 196, 112);
+  border-radius: 20px;
+  border: none;
+  height: 30px;
+  width: auto;
+  cursor: pointer;
+  color: white;
+}
+button:hover {
+  background-color: rgb(210, 248, 232);
   color: green;
 }
