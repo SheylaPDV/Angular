@@ -319,13 +319,16 @@
   <!-- Cuando ponemos corchetes, indicamos que el valor de las comillas es una variable  que pòdemos encontrrar dentro del controlador-->
   <!-- Input para trabajaer con NgModel -->
   <!-- Los parentesis son para escuchar eventos y los corchetes para pasar informacion -->
-  <input type="text" placeholder="Nombre del usuario" [(ngModel)]="usuario" />
-  <app-saludo
+  <!-- <input type="text" placeholder="Nombre del usuario" [(ngModel)]="usuario" /> -->
+  <!-- <app-saludo
     [nombre]="usuario"
     (mensajeEmitter)="recibirMensajeDelHijo($event)"
-  ></app-saludo>
+  ></app-saludo> -->
   <!-- <app-saludo (mensajeEmitter)="recibirMensajeDelHijo($event)"></app-saludo> -->
   <!-- <app-saludo></app-saludo> -->
+
+  <!-- Ejemplo de uso de servicio -->
+  <app-lista-contactos></app-lista-contactos>
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
