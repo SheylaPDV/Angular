@@ -1,6 +1,10 @@
 h1 {
   color: rgb(103, 30, 155);
 }
+h1:hover {
+  font-size: 50px;
+  transition: 1s;
+}
 
 .saludo {
   color: rgb(159, 66, 188);
@@ -21,4 +25,5 @@ button {
 button:hover {
   background-color: rgb(210, 248, 232);
   color: green;
+  transition: 1s;
 }

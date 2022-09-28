@@ -1,3 +1,110 @@
-<p>Lista de elementos:</p>
+<!-- Bloque de directivas de atributo -->
 
-<p>Aqui vamos a iterar sobre una lista y mostrar varios elementos</p>
+<p [ngStyle]="{ color: 'tomato' }">Lista de elementos:</p>
+
+<p ngClass="underlined">
+  Aqui vamos a iterar sobre una lista y mostrar varios elementos
+</p>
+
+<p [ngClass]="['underlined', 'big']">Aun no tienes elementos en la lista</p>
+
+<p [ngClass]="{ underlined: false, big: true }">
+  Te recomendamos crear un elemento
+</p>
+
+<!-- Bloque de directivas estructurales -->
+
+<button (click)="cambiarCargando()">
+  {{ cargando ? "Terminar carga" : "Iniciar carga" }}
+</button>
+
+<ng-container *ngIf="!cargando; else templateEspera"
+  ><p>Todo listo</p></ng-container
+>
+<ng-template #templateEspera>
+  <p>Cargando...</p>
+  <p>Espere a que termine el proceso</p>
+</ng-template>
+
+<!-- Bloque para explicar el uso de NGFOR -->
+<!-- Iteramos en la lista de productos -->
+<!-- even para saber si es impar, index para crear un indice -->
+<div *ngFor="let producto of listaElementos; let i = index; let even = even">
+  <div
+    [ngStyle]="
+      even
+        ? {
+            backgroundColor: 'blue',
+            color: 'white',
+            padding: '30px 30px 10px 10px',
+            width: '130px'
+          }
+        : {
+            backgroundColor: 'green',
+            color: 'white',
+            padding: '30px 30px 10px 10px',
+            width: '130px'
+          }
+    "
+    class="producto"
+  >
+    <p>ID: {{ i + 1 }}</p>
+    <p>{{ producto.nombre }} - {{ producto.precio }}</p>
+    <p>{{ producto.descripcion }}</p>
+  </div>
+  <!-- Ambito de FOR donde tenemos acceso a "producto" -->
+</div>
+<!-- Bloque para entender ngSwitch -->
+<div [ngSwitch]="opcion">
+  <p [id]="1" *ngSwitchCase="1">Has escogido la Opcion 1</p>
+  <p [id]="2" *ngSwitchCase="2">Has escogido la Opcion 2</p>
+  <p [id]="3" *ngSwitchCase="3">Has escogido la Opcion 3</p>
+  <p [id]="4" *ngSwitchCase="4">Has escogido la Opcion 4</p>
+  <p *ngSwitchDefault class="cerrar"></p>
+</div>
+<!-- Seleccion de opcion para usuario -->
+<div [ngStyle]="{ backgroundColor: 'yellow', padding: '30px 30px 10px 10px' }">
+  <input type="radio" name="opcion" (click)="escogerOpcion(1)" /> Opcion 1
+  <input type="radio" name="opcion" (click)="escogerOpcion(2)" /> Opcion 2
+  <input type="radio" name="opcion" (click)="escogerOpcion(3)" /> Opcion 3
+  <input type="radio" name="opcion" (click)="escogerOpcion(4)" /> Opcion 4
+  <input
+    type="radio"
+    selected="selected"
+    name="opcion"
+    (click)="escogerOpcion(0)"
+  />
+  Ocultar
+</div>
+
+<!-- Podemos concatenar directivas -->
+<p [ngStyle]="{ backgroundColor: 'aliceblue', fontSize: '40px' }">
+  Productos de mas de 10 euros
+</p>
+<div *ngFor="let producto of listaElementos; let i = index; let even = even">
+  <!-- Solo renderiza los productos de > de 10 euros de precio -->
+  <div
+    *ngIf="producto.precio > 10"
+    [ngStyle]="
+      even
+        ? {
+            backgroundColor: 'blue',
+            color: 'white',
+            padding: '30px 30px 10px 10px',
+            width: '130px'
+          }
+        : {
+            backgroundColor: 'green',
+            color: 'white',
+            padding: '30px 30px 10px 10px',
+            width: '130px'
+          }
+    "
+    class="producto"
+  >
+    <p>ID: {{ i + 1 }}</p>
+    <p>{{ producto.nombre }} - {{ producto.precio }}</p>
+    <p>{{ producto.descripcion }}</p>
+  </div>
+  <!-- Ambito de FOR donde tenemos acceso a "producto" -->
+</div>
