@@ -7,9 +7,15 @@ import { SaludoComponent } from './components/saludo/saludo.component';
 // Modulo personalizado que exporta componentes de tipo lista
 import { ListsModule } from './modules/lists/lists.module';
 import { ListaContactosComponent } from './components/lista-contactos/lista-contactos.component';
+import { LoginFormComponent } from './components/forms/login-form/login-form.component';
 
 @NgModule({
-  declarations: [AppComponent, SaludoComponent, ListaContactosComponent],
+  declarations: [
+    AppComponent,
+    SaludoComponent,
+    ListaContactosComponent,
+    LoginFormComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule,
