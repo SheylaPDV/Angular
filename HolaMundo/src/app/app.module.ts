@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SaludoComponent } from './components/saludo/saludo.component';
 // Modulo personalizado que exporta componentes de tipo lista
@@ -14,6 +14,8 @@ import { ListaContactosComponent } from './components/lista-contactos/lista-cont
     BrowserModule,
     FormsModule,
     /*Importamos modulo personalizado*/ ListsModule,
+    // importamos modulo HttpClientModule para hacer petiociones HTTP
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
